@@ -1,0 +1,3 @@
+const SET_VIDEO_LIST = "SET_VIDEO_LIST";
+
+export { SET_VIDEO_LIST };

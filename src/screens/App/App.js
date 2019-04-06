@@ -1,21 +1,32 @@
-import "./App.css";
+import './App.css';
 
-import React from "react";
+import React, { useEffect, useState } from 'react';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
+import { Filtering } from './../../components/organisms/Filtering';
+import { VideoList } from './../../components/organisms/VideoList';
 
+const App = props => {
+  const [selectedTag, setTag] = useState();
+
+  useEffect(() => {
     props.getVideoList();
-  }
-  render() {
-    return (
-      <div className="main">
-        <header className="main-header">Video List</header>
-        <main />
-      </div>
-    );
-  }
-}
+  }, []);
+
+  const filterVideos = (videos, tag) =>
+    videos.filter(video => video.tags.includes(tag));
+
+  return (
+    <div className="main">
+      <header className="main-header">Video List</header>
+      <Filtering tags={props.tags} selectedTag={selectedTag} setTag={setTag} />
+      <VideoList
+        videos={
+          selectedTag ? filterVideos(props.videos, selectedTag) : props.videos
+        }
+      />
+      <main />
+    </div>
+  );
+};
 
 export default App;

@@ -13,16 +13,16 @@ const closeButton = (
 		version="1.1"
 		xmlns="http://www.w3.org/2000/svg"
 	>
-		<line x1="1" y1="24" x2="24" y2="1" stroke="black" stroke-width="3" />
-		<line x1="1" y1="1" x2="24" y2="24" stroke="black" stroke-width="3" />
+		<line x1="1" y1="24" x2="24" y2="1" stroke="black" strokeWidth="3" />
+		<line x1="1" y1="1" x2="24" y2="24" stroke="black" strokeWidth="3" />
 	</svg>
 );
 
 const Modal = props =>
 	ReactDom.createPortal(
 		<s.Modal>
-			<s.CloseButton onClick={props.closeModal}>{closeButton}</s.CloseButton>
 			{props.children}
+			<s.CloseButton onClick={props.closeModal}>{closeButton}</s.CloseButton>
 		</s.Modal>,
 		modalRoot,
 	);

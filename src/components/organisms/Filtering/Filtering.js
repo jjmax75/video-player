@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Tags } from './../Tags';
+import Tags from './../Tags';
 import { Duration } from './../../molecules';
 
 const Filtering = props => {

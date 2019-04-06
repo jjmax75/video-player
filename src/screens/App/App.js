@@ -2,9 +2,12 @@ import './App.css';
 
 import React, { useEffect, useState } from 'react';
 
-import { Filtering } from './../../components/organisms/Filtering';
-import { VideoList } from './../../components/organisms/VideoList';
-import Modal from './../../components/organisms/Modal';
+import {
+  Filtering,
+  Modal,
+  VideoList,
+  VideoPlayer,
+} from './../../components/organisms';
 
 const App = props => {
   const [selectedTag, setTag] = useState();
@@ -33,7 +36,11 @@ const App = props => {
           }
           selectVideo={setVideo}
         />
-        {selectedVideo && <Modal closeModal={() => setVideo(null)} />}
+        {selectedVideo && (
+          <Modal closeModal={() => setVideo(null)}>
+            <VideoPlayer video={selectedVideo} />
+          </Modal>
+        )}
       </main>
     </div>
   );

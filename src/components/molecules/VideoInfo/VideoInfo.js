@@ -1,15 +1,17 @@
 import React from 'react';
 
+import * as s from './styles';
+
 import uuid from 'uuid/v4';
 
 const VideoInfo = props => {
 	// todo - calculate this on load and store in redux
 	const renderTags = tags => (
-		<ul>
+		<s.Ul>
 			{tags.map(tag => (
-				<li key={uuid()}>{tag}</li>
+				<s.Li key={uuid()}>{tag}</s.Li>
 			))}
-		</ul>
+		</s.Ul>
 	);
 
 	// todo - calculate this on load and store in redux

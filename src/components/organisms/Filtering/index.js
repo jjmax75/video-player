@@ -1,3 +1,3 @@
 import Filtering from './Filtering';
 
-export { Filtering };
+export default Filtering;

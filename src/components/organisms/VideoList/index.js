@@ -1,3 +1,3 @@
 import VideoList from './VideoList';
 
-export { VideoList };
+export default VideoList;

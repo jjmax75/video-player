@@ -1,11 +1,14 @@
 import React from 'react';
 
+import { VideoInfo } from './../../molecules';
+
 const VideoList = props =>
 	props.videos.map(video => (
-		<div>
-			<h2>{video.title}</h2>
-			<span>{video.description}</span>
-		</div>
+		<VideoInfo
+			key={video.video_id}
+			video={video}
+			selectVideo={props.selectVideo}
+		/>
 	));
 
 export default VideoList;
